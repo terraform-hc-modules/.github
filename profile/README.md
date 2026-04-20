@@ -17,24 +17,11 @@ This organization provides high-quality, well-tested Terraform modules for Hetzn
 
 ## Available Modules
 
-| Module | Description | Registry |
-|--------|-------------|----------|
-| [terraform-module-template](https://github.com/terraform-hc-modules/terraform-module-template) | Template for creating new modules | - |
+| Module | Description |
+|--------|-------------|
+| [terraform-module-template](https://github.com/terraform-hc-modules/terraform-module-template) | Template for creating new modules |
 
 *More modules coming soon!*
-
-## Quick Start
-
-```hcl
-module "server" {
-  source  = "terraform-hc-modules/server/hcloud"
-  version = "~> 1.0"
-
-  name        = "web-server"
-  server_type = "cx21"
-  image       = "ubuntu-24.04"
-}
-```
 
 ## Contributing
 
