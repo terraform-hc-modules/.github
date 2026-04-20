@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Hetzner Cloud Documentation
+    url: https://docs.hetzner.com/cloud
+    about: Official Hetzner Cloud documentation
+  - name: Terraform Provider Documentation
+    url: https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs
+    about: Hetzner Cloud Terraform provider documentation
