@@ -1,14 +1,50 @@
-<img src="https://raw.githubusercontent.com/hetznercloud/hcloud-cloud-controller-manager/main/.github/images/hetzner-cloud-logo.svg" width="80" align="left" alt="Hetzner Cloud">
+<p align="center">
+  <img width="1024" height="292" alt="Terraform Hetzner Modules Banner" src="https://clouddrove.s3.ca-central-1.amazonaws.com/Logo/hetzner.png" />
+</p>
 
-## Terraform Hetzner Cloud Modules
+<h1 align="center">Terraform Hetzner Modules</h1>
+<p align="center"><em>Reusable, cost-efficient, and production-ready Terraform modules for Hetzner Cloud.</em></p>
 
-Unofficial community maintained Terraform modules for Hetzner Cloud
+<p align="center">
 
----
-
+![Provider](https://img.shields.io/badge/Provider-Hetzner%20Cloud-orange)
+![Checkov](https://img.shields.io/badge/Security-Checkov-green)
 [![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-blue.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Terraform](https://img.shields.io/badge/Terraform-%3E%3D1.0-blueviolet)](https://www.terraform.io/)
 [![OpenTofu](https://img.shields.io/badge/OpenTofu-Compatible-yellow)](https://opentofu.org/)
+
+</p>
+
+---
+
+## ⚡ What We Do
+- **Infrastructure as Code (IaC):** Modular Terraform for Hetzner Cloud
+- **Cost-Optimized:** Designed for Hetzner’s pricing advantage
+- **Secure by Default:** Built-in security guardrails
+- **Standardized:** Naming, tagging, and structure consistency
+- **CI/CD Ready:** GitHub Actions & GitOps friendly
+
+---
+
+## 🏆 Highlights
+- ✔️ Checkov validated modules  
+- ✔️ Example usage in every module  
+- ✔️ Lightweight & high-performance  
+- ✔️ Community-driven  
+
+---
+
+## 🔁 CI/CD & Security
+
+- GitHub Actions for validation  
+- Terraform fmt + validate  
+- Checkov security scanning  
+
+**Optional:**
+- tflint  
+- tfsec  
+
+---
 
 ### Available Modules
 
@@ -22,38 +58,30 @@ Unofficial community maintained Terraform modules for Hetzner Cloud
 | [terraform-hcloud-dns](https://github.com/terraform-hc-modules/terraform-hcloud-dns) | DNS Zones and Records | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-dns?label=) |
 | [terraform-hcloud-storage-box](https://github.com/terraform-hc-modules/terraform-hcloud-storage-box) | Storage Box (Beta) | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-storage-box?label=&include_prereleases) |
 
-### Quick Start
+---
 
-```hcl
-module "network" {
-  source  = "terraform-hc-modules/network/hcloud"
-  version = "0.1.0"
+## 👐 Open Source Ecosystem
 
-  name     = "my-vpc"
-  ip_range = "10.0.0.0/16"
+| Platform        | Modules |
+|----------------|--------|
+| **AWS**        | https://github.com/clouddrove?q=terraform-aws |
+| **GCP**        | https://github.com/clouddrove?q=terraform-gcp |
+| **DigitalOcean** | https://github.com/terraform-do-modules |
+| **Azure**    | https://github.com/terraform-az-modules |
 
-  subnets = [{
-    ip_range     = "10.0.1.0/24"
-    network_zone = "eu-central"
-  }]
-}
+---
 
-module "compute" {
-  source  = "terraform-hc-modules/compute/hcloud"
-  version = "0.1.0"
+## 📚 Blogs
 
-  name        = "my-server"
-  server_type = "cx22"
-  image       = "ubuntu-24.04"
-  location    = "fsn1"
-}
-```
+👉 https://blog.clouddrove.com/  
 
-### Contributing
+---
 
-We welcome contributions! See our [Contributing Guide](https://github.com/terraform-hc-modules/.github/blob/main/CONTRIBUTING.md).
+## 🌐 CloudDrove Capabilities
 
-### Resources
+- Infrastructure Design & Migration  
+- Cloud Security & Compliance  
+- Kubernetes & GitOps  
+- Automation & Observability  
 
-- [Hetzner Cloud Provider Docs](https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs)
-- [Hetzner Cloud API](https://docs.hetzner.cloud/)
+📩 **business@clouddrove.com**
