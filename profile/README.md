@@ -75,13 +75,4 @@
 
 👉 https://blog.clouddrove.com/  
 
----
 
-## 🌐 CloudDrove Capabilities
-
-- Infrastructure Design & Migration  
-- Cloud Security & Compliance  
-- Kubernetes & GitOps  
-- Automation & Observability  
-
-📩 **business@clouddrove.com**
