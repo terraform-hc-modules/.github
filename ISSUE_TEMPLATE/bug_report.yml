@@ -7,12 +7,21 @@ body:
       value: |
         Thank you for reporting a bug! Please fill out the information below.
 
-  - type: input
+  - type: dropdown
     id: module
     attributes:
       label: Module
       description: Which module is affected?
-      placeholder: e.g., terraform-hcloud-server
+      options:
+        - terraform-hcloud-labels
+        - terraform-hcloud-network
+        - terraform-hcloud-compute
+        - terraform-hcloud-ip
+        - terraform-hcloud-certificate
+        - terraform-hcloud-dns
+        - terraform-hcloud-storage-box
+        - terraform-hcloud-object-storage
+        - other
     validations:
       required: true
 
@@ -21,7 +30,7 @@ body:
     attributes:
       label: Module Version
       description: What version of the module are you using?
-      placeholder: e.g., 1.0.0
+      placeholder: e.g., 0.5.0
     validations:
       required: true
 
@@ -42,7 +51,16 @@ body:
     attributes:
       label: Tool Version
       description: What version of Terraform/OpenTofu/Terragrunt?
-      placeholder: e.g., 1.7.0
+      placeholder: e.g., 1.10.0
+    validations:
+      required: true
+
+  - type: input
+    id: provider-version
+    attributes:
+      label: Provider Version
+      description: Version of hetznercloud/hcloud (or aminueza/minio for object storage) from `terraform version`
+      placeholder: e.g., 1.70.2
     validations:
       required: true
 
