@@ -15,6 +15,9 @@
 - [ ] My code follows the project's style guidelines
 - [ ] I have run `terraform fmt -recursive`
 - [ ] I have run `terraform validate`
+- [ ] I have run `terraform test`
+- [ ] I have regenerated READMEs with terraform-docs
+- [ ] I have added one release label (`major`, `minor` or `patch`)
 - [ ] I have run security scans (`tfsec`, `checkov`)
 - [ ] I have updated documentation (if applicable)
 - [ ] I have added/updated examples (if applicable)

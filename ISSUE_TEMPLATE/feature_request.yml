@@ -12,7 +12,7 @@ body:
     attributes:
       label: Module
       description: Which module is this for? (or "new module" for a new module request)
-      placeholder: e.g., terraform-hcloud-server
+      placeholder: e.g., terraform-hcloud-compute
     validations:
       required: true
 

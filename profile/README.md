@@ -10,7 +10,7 @@
 ![Provider](https://img.shields.io/badge/Provider-Hetzner%20Cloud-orange)
 ![Checkov](https://img.shields.io/badge/Security-Checkov-green)
 [![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-blue.svg)](https://opensource.org/licenses/MPL-2.0)
-[![Terraform](https://img.shields.io/badge/Terraform-%3E%3D1.0-blueviolet)](https://www.terraform.io/)
+[![Terraform](https://img.shields.io/badge/Terraform-%3E%3D1.10-blueviolet)](https://www.terraform.io/)
 [![OpenTofu](https://img.shields.io/badge/OpenTofu-Compatible-yellow)](https://opentofu.org/)
 
 </p>
@@ -36,13 +36,15 @@
 
 ## 🔁 CI/CD & Security
 
-- GitHub Actions for validation  
-- Terraform fmt + validate  
-- Checkov security scanning  
+Every module runs these checks on each pull request:
 
-**Optional:**
-- tflint  
-- tfsec  
+- `terraform fmt` and `terraform validate` on the module and every example
+- `terraform test` with offline plans
+- tflint
+- terraform-docs drift check on every README
+- Checkov security scanning
+
+Merged pull requests are tagged and released automatically from their `major`, `minor` or `patch` label.
 
 ---
 
@@ -51,12 +53,13 @@
 | Module | Description | Version |
 |--------|-------------|---------|
 | [terraform-hcloud-labels](https://github.com/terraform-hc-modules/terraform-hcloud-labels) | Naming and labeling utility | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-labels?label=) |
-| [terraform-hcloud-network](https://github.com/terraform-hc-modules/terraform-hcloud-network) | VPC, Firewall, Load Balancer | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-network?label=) |
-| [terraform-hcloud-compute](https://github.com/terraform-hc-modules/terraform-hcloud-compute) | Server, Volume, SSH Key, Placement Group | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-compute?label=) |
+| [terraform-hcloud-network](https://github.com/terraform-hc-modules/terraform-hcloud-network) | Network, Subnets, Routes, Firewall, Firewall Attachment, Load Balancer | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-network?label=) |
+| [terraform-hcloud-compute](https://github.com/terraform-hc-modules/terraform-hcloud-compute) | Server, Volume, Volume Attachment, Snapshot, SSH Key, Placement Group, rDNS | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-compute?label=) |
 | [terraform-hcloud-ip](https://github.com/terraform-hc-modules/terraform-hcloud-ip) | Primary IP, Floating IP, rDNS | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-ip?label=) |
-| [terraform-hcloud-certificate](https://github.com/terraform-hc-modules/terraform-hcloud-certificate) | SSL/TLS Certificates (Managed & Uploaded) | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-certificate?label=) |
-| [terraform-hcloud-dns](https://github.com/terraform-hc-modules/terraform-hcloud-dns) | DNS Zones and Records | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-dns?label=) |
-| [terraform-hcloud-storage-box](https://github.com/terraform-hc-modules/terraform-hcloud-storage-box) | Storage Box (Beta) | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-storage-box?label=&include_prereleases) |
+| [terraform-hcloud-certificate](https://github.com/terraform-hc-modules/terraform-hcloud-certificate) | SSL/TLS Certificates (Managed and Uploaded) | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-certificate?label=) |
+| [terraform-hcloud-dns](https://github.com/terraform-hc-modules/terraform-hcloud-dns) | DNS Zones, Records and RRSets | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-dns?label=) |
+| [terraform-hcloud-storage-box](https://github.com/terraform-hc-modules/terraform-hcloud-storage-box) | Storage Box, Subaccounts, Snapshots | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-storage-box?label=) |
+| [terraform-hcloud-object-storage](https://github.com/terraform-hc-modules/terraform-hcloud-object-storage) | Object Storage buckets (S3 compatible, MinIO provider) | ![](https://img.shields.io/github/v/release/terraform-hc-modules/terraform-hcloud-object-storage?label=) |
 
 ---
 

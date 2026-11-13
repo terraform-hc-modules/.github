@@ -34,7 +34,7 @@ By participating in this project, you agree to abide by our [Code of Conduct](CO
 
 ### Prerequisites
 
-- [Terraform](https://www.terraform.io/downloads) >= 1.5.0
+- [Terraform](https://www.terraform.io/downloads) >= 1.10.0
 - [TFLint](https://github.com/terraform-linters/tflint)
 - [terraform-docs](https://terraform-docs.io/)
 - [tfsec](https://aquasecurity.github.io/tfsec/)
@@ -65,7 +65,7 @@ We follow the [HashiCorp Terraform Style Guide](https://developer.hashicorp.com/
 
 | File | Purpose |
 |------|---------|
-| `terraform.tf` | Version constraints |
+| `versions.tf` | Terraform and provider version constraints |
 | `main.tf` | Primary resources |
 | `variables.tf` | Input variables (alphabetical) |
 | `outputs.tf` | Outputs (alphabetical) |
@@ -96,14 +96,15 @@ Before submitting a PR:
 terraform fmt -check -recursive
 terraform init -backend=false
 terraform validate
-tflint -f compact
+HCLOUD_TOKEN=dummy terraform test
+tflint --init && tflint -f compact --recursive
 tfsec . --minimum-severity MEDIUM
 checkov -d . --quiet
 ```
 
 ## Documentation
 
-- Update README.md with terraform-docs
+- Regenerate every README.md that has terraform-docs markers (`terraform-docs -c .terraform-docs.yml <dir>`); CI fails on drift
 - Include usage examples
 - Document all variables and outputs
 
@@ -120,12 +121,9 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## Release Process
 
-Releases are automated via GitHub Actions when tags are pushed:
+Releases are automatic. Add exactly one of the `major`, `minor` or `patch` labels to your pull request. When it is merged, the tag release workflow creates the next `vX.Y.Z` tag and GitHub release from that label. Do not push tags by hand.
 
-```bash
-git tag v1.0.0
-git push origin v1.0.0
-```
+While a module is below `v1.0.0`, breaking changes use `minor`.
 
 ## Questions?
 
